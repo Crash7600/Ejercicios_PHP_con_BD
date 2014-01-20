@@ -1,15 +1,15 @@
 <?php
+
 //connect to MySQL
 require ('config.php');
-$connect=mysql_connect(SQL_HOST,SQL_USER,SQL_PASS,SQL_DB)
-or die('No se puedo conectar a MySql.' .mysql_error());
+$connect = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS, SQL_DB) or die('No se puedo conectar a MySql.' . mysql_error());
 
 //make sure we're using the right database
-mysql_select_db ("wiley2");
+mysql_select_db("wiley2");
 
 
 
-$const="ALTER TABLE movie 
+$const = "ALTER TABLE movie 
 		ADD CONSTRAINT fk_movietype_movie FOREIGN KEY (movie_type) 
 		REFERENCES movietype(movietype_id) 
 		ON DELETE CASCADE,
@@ -29,6 +29,5 @@ $const="ALTER TABLE movie
 // SHOW INNODB STATUS
 
 $results = mysql_query($const) or die(mysql_error());
-echo "Se han añadido la restricción de clave ajena de movie_type, movie_leadactor y movie_director";
-
+echo "Se han aï¿½adido la restricciï¿½n de clave ajena de movie_type, movie_leadactor y movie_director";
 ?>
