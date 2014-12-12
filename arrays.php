@@ -24,7 +24,7 @@ foreach ($notas as $key => $value) {
 }
 */
 foreach ($notas as $key) {
-	echo "El alumno AL1";
+	echo "El alumno alumno1";
 
 	foreach ($key as $nota) {
 		echo " ha sacado un " . $nota;
